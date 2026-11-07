@@ -1,0 +1,51 @@
+.scale-selector {
+  margin: 0;
+}
+
+.scale-group + .scale-group {
+  margin-top: 14px;
+}
+
+.scale-group-title {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.scale-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.scale-button {
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.scale-button:hover {
+  background: var(--bg);
+}
+
+.scale-button-hint {
+  float: right;
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.scale-button.active {
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+}

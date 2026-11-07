@@ -1,0 +1,64 @@
+.hexatonic-pattern-selector {
+  margin: 0;
+}
+
+.pattern-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+}
+
+.pattern-button {
+  height: 40px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.pattern-button .pattern-num {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pattern-button .pattern-omit {
+  font-size: 9px;
+  opacity: 0.6;
+}
+
+.pattern-button:hover {
+  border-color: var(--border);
+}
+
+.pattern-button.active {
+  background: var(--accent);
+  color: white;
+}
+
+.pattern-button.active .pattern-omit {
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .pattern-button {
+    height: 36px;
+  }
+
+  .pattern-button .pattern-num {
+    font-size: 13px;
+  }
+  
+  .pattern-button .pattern-omit {
+    font-size: 8px;
+  }
+}

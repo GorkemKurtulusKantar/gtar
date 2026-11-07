@@ -1,0 +1,147 @@
+.triad-diagram {
+  background: #fffef7;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 140px;
+}
+
+.triad-diagram-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.shape-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+}
+
+.root-fret {
+  font-size: 10px;
+  color: #999;
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.mini-fretboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fret-numbers {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.fret-numbers .string-label-space {
+  width: 20px;
+}
+
+.fret-num {
+  width: 28px;
+  text-align: center;
+  font-size: 9px;
+  color: #888;
+}
+
+.mini-string-row {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  position: relative;
+}
+
+.mini-string-row::after {
+  content: '';
+  position: absolute;
+  left: 22px;
+  right: 0;
+  height: 1px;
+  background: #d4a574;
+  top: 50%;
+  z-index: 0;
+}
+
+.mini-string-label {
+  width: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  text-align: center;
+}
+
+.mini-fret {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.mini-fret::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #ccc;
+}
+
+.mini-fret:first-of-type::before {
+  width: 3px;
+  background: #333;
+}
+
+.mini-note {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  background: #FFE066;
+  color: #333;
+  border: 2px solid #E6C84D;
+  z-index: 2;
+}
+
+.mini-note.root {
+  background: #FF6B9D;
+  color: white;
+  border-color: #E84D7E;
+}
+
+/* Quality-specific colors */
+.triad-diagram.major .mini-note:not(.root) {
+  background: #A8E6CF;
+  border-color: #7DD3B3;
+}
+
+.triad-diagram.minor .mini-note:not(.root) {
+  background: #B8C5E8;
+  border-color: #9AAFE0;
+}
+
+.triad-diagram.diminished .mini-note:not(.root) {
+  background: #E8C5B8;
+  border-color: #D4A89A;
+}
+
+.triad-diagram.augmented .mini-note:not(.root) {
+  background: #E8E0B8;
+  border-color: #D4CCA0;
+}
+

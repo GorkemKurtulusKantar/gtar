@@ -1,0 +1,31 @@
+.key-selector {
+  margin: 0;
+}
+
+.key-buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+
+.key-button {
+  padding: 7px 0;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.key-button:hover {
+  border-color: var(--border);
+}
+
+.key-button.active {
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+}

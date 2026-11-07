@@ -1,0 +1,89 @@
+.chord-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 8px 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+}
+
+.chord-diagram:hover {
+  border-color: #c9c5bd;
+}
+
+.chord-diagram.active {
+  border-color: var(--selected);
+  box-shadow: 0 0 0 2px rgba(224, 69, 123, 0.2);
+}
+
+.chord-diagram.compact {
+  padding: 4px;
+  border: none;
+  background: transparent;
+}
+
+.chord-diagram svg .fret-line {
+  stroke: #d6d2ca;
+  stroke-width: 1;
+}
+
+.chord-diagram svg .nut {
+  stroke: var(--text);
+  stroke-width: 3;
+}
+
+.chord-diagram svg .string-line-svg {
+  stroke: #b9b5ad;
+  stroke-width: 1;
+}
+
+.chord-diagram svg .start-fret {
+  font-size: 10px;
+  fill: var(--text-muted);
+  font-weight: 600;
+}
+
+.chord-diagram svg .mute {
+  font-size: 11px;
+  fill: var(--text-muted);
+}
+
+.chord-diagram svg .open {
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 1.3;
+}
+
+.chord-diagram svg .barre {
+  fill: var(--text);
+  opacity: 0.18;
+}
+
+.chord-diagram svg .dot circle {
+  fill: #9a978f;
+}
+
+.chord-diagram svg .dot text {
+  font-size: 7.5px;
+  font-weight: 700;
+  fill: white;
+}
+
+.chord-diagram svg .dot.deg-1 circle { fill: var(--deg-1); }
+.chord-diagram svg .dot.deg-2 circle { fill: var(--deg-2); }
+.chord-diagram svg .dot.deg-3 circle { fill: var(--deg-3); }
+.chord-diagram svg .dot.deg-4 circle { fill: var(--deg-4); }
+.chord-diagram svg .dot.deg-5 circle { fill: var(--deg-5); }
+.chord-diagram svg .dot.deg-6 circle { fill: var(--deg-6); }
+.chord-diagram svg .dot.deg-7 circle { fill: var(--deg-7); }
+
+.chord-diagram-kind {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+}

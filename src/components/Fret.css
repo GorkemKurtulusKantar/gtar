@@ -1,0 +1,74 @@
+.fret {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Açık tel (0. perde) ile 1. perde arasındaki eşik daha kalın */
+.string-line + .fret {
+  border-right: 3px solid #b9b5ad;
+}
+
+.fret:hover {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.note-indicator {
+  --dot-color: #9a978f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--dot-color);
+  color: white;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.fret:hover .note-indicator {
+  transform: scale(1.08);
+}
+
+.scale-degree {
+  font-size: 12px;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Gam derecesine göre renk (App.css'teki --deg-N değişkenleri) */
+.fret.deg-1 .note-indicator { --dot-color: var(--deg-1); }
+.fret.deg-2 .note-indicator { --dot-color: var(--deg-2); }
+.fret.deg-3 .note-indicator { --dot-color: var(--deg-3); }
+.fret.deg-4 .note-indicator { --dot-color: var(--deg-4); }
+.fret.deg-5 .note-indicator { --dot-color: var(--deg-5); }
+.fret.deg-6 .note-indicator { --dot-color: var(--deg-6); }
+.fret.deg-7 .note-indicator { --dot-color: var(--deg-7); }
+
+/* Kök nota: halka ile ayrıca vurgulanır */
+.fret.root-note .note-indicator {
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--dot-color);
+}
+
+.fret.root-note .scale-degree {
+  font-weight: 700;
+}
+
+/* Akor modunda seçili şeklin dışındaki akor notaları soluk */
+.fret.dimmed .note-indicator {
+  opacity: 0.25;
+  box-shadow: none;
+}
+
+/* Seçili nota (piyanoda gösterilen perde) */
+.fret.selected .note-indicator {
+  background: var(--selected);
+  box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--selected);
+  transform: scale(1.12);
+}

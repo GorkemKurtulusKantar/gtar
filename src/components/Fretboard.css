@@ -1,0 +1,81 @@
+.fretboard-container {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.fretboard {
+  min-width: 860px;
+}
+
+.fretboard-header,
+.fretboard-footer,
+.string-row {
+  display: grid;
+  grid-template-columns: 36px repeat(19, minmax(40px, 1fr));
+}
+
+.fretboard-header {
+  margin-bottom: 4px;
+}
+
+.fretboard-footer {
+  margin-top: 4px;
+}
+
+.fret-number {
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 4px;
+}
+
+.string-label-space {
+  width: 36px;
+}
+
+.string-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.string-row {
+  position: relative;
+  min-height: 44px;
+}
+
+/* Tel çizgisi: üstteki ince telden alttaki kalın tele doğru kalınlaşır */
+.string-line {
+  position: absolute;
+  left: 36px;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #c9c5bd;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Akor modunda susturulan tel */
+.string-row.muted .string-line {
+  opacity: 0.35;
+}
+
+.string-row.muted .string-label {
+  color: var(--root);
+}
+
+.string-row:nth-child(3) .string-line { height: 1.25px; }
+.string-row:nth-child(4) .string-line { height: 1.5px; }
+.string-row:nth-child(5) .string-line { height: 2px; }
+.string-row:nth-child(6) .string-line { height: 2.5px; }
+.string-row:nth-child(7) .string-line { height: 3px; }

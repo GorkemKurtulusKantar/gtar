@@ -1,0 +1,223 @@
+.triad-display {
+  width: 100%;
+  padding: 20px;
+}
+
+.triad-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.triad-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.triad-subtitle {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Degree selector */
+.degree-selector {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f8f8f8;
+  border-radius: 12px;
+}
+
+.degree-btn {
+  padding: 8px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.degree-btn:hover {
+  border-color: #bbb;
+  transform: translateY(-1px);
+}
+
+.degree-btn.active {
+  border-color: #FF0080;
+  background: #FF0080;
+  color: white;
+}
+
+/* Quality-specific button colors */
+.degree-btn.major:not(.active) {
+  background: #E8F5E9;
+  border-color: #A5D6A7;
+  color: #2E7D32;
+}
+
+.degree-btn.minor:not(.active) {
+  background: #E3F2FD;
+  border-color: #90CAF9;
+  color: #1565C0;
+}
+
+.degree-btn.diminished:not(.active) {
+  background: #FBE9E7;
+  border-color: #FFAB91;
+  color: #D84315;
+}
+
+.degree-btn.augmented:not(.active) {
+  background: #FFF8E1;
+  border-color: #FFE082;
+  color: #F57F17;
+}
+
+/* Triads grid */
+.triads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+}
+
+/* Triad card */
+.triad-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid #eee;
+}
+
+.triad-card.major {
+  border-color: #A5D6A7;
+}
+
+.triad-card.minor {
+  border-color: #90CAF9;
+}
+
+.triad-card.diminished {
+  border-color: #FFAB91;
+}
+
+.triad-card.augmented {
+  border-color: #FFE082;
+}
+
+.triad-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.chord-info {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.roman-numeral {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.chord-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #FF0080;
+}
+
+.quality-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.quality-badge.major {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.quality-badge.minor {
+  background: #E3F2FD;
+  color: #1565C0;
+}
+
+.quality-badge.diminished {
+  background: #FBE9E7;
+  color: #D84315;
+}
+
+.quality-badge.augmented {
+  background: #FFF8E1;
+  color: #F57F17;
+}
+
+.chord-notes,
+.chord-intervals {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.notes-label,
+.intervals-label {
+  color: #888;
+  min-width: 70px;
+}
+
+.notes-list,
+.intervals-list {
+  font-weight: 600;
+  color: #444;
+}
+
+.triad-positions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.no-positions {
+  color: #999;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .triads-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .triad-positions {
+    justify-content: center;
+  }
+  
+  .degree-selector {
+    gap: 6px;
+  }
+  
+  .degree-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+

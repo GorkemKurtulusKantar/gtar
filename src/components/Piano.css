@@ -1,0 +1,111 @@
+.piano-container {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 20px 18px;
+}
+
+.piano-info {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-height: 28px;
+  margin-bottom: 10px;
+}
+
+.piano-info-note {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--selected);
+}
+
+.piano-info-detail,
+.piano-info-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.piano-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.piano {
+  position: relative;
+  display: flex;
+  min-width: 860px;
+  height: 130px;
+  border-top: 4px solid var(--text);
+  border-radius: 4px;
+}
+
+.piano-key {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: background 0.12s ease;
+}
+
+.piano-key.white {
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: none;
+  margin-right: -1px;
+  border-radius: 0 0 4px 4px;
+}
+
+.piano-key.white:hover {
+  background: var(--bg);
+}
+
+.piano-key.black {
+  position: absolute;
+  top: 0;
+  height: 60%;
+  background: #2b2b2b;
+  border-radius: 0 0 3px 3px;
+  z-index: 2;
+}
+
+.piano-key.black:hover {
+  background: #444;
+}
+
+/* Gam notaları: soluk vurgu, kök nota kırmızımsı */
+.piano-key.white.in-scale {
+  background: #e7f1ea;
+}
+
+.piano-key.white.in-scale.scale-root {
+  background: #f7dedd;
+}
+
+.piano-key.black.in-scale {
+  background: #3f7d56;
+}
+
+.piano-key.black.in-scale.scale-root {
+  background: #a8423e;
+}
+
+.piano-key.white.selected,
+.piano-key.black.selected {
+  background: var(--selected);
+}
+
+.piano-key-label {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.piano-key.selected .piano-key-label {
+  color: white;
+  font-size: 10px;
+}
